@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Title of the document</title>
+    <style>
+      marquee{
+      font-size: 30px;
+      font-weight: 800;
+      color: #8ebf42;
+      font-family: sans-serif;
+      }
+    
+<title>This is the registration page.</title>  
+</style>
+ <marquee> Only Applicable for Userid:<b>tanmoy</b> && password :<b>123456</b></marquee>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login-page">
+<div class="form">
+<form class="register-form">
+<input type="text" placeholder="name"/>
+<input type="text" placeholder="password"/>
+<input type="text" placeholder="email id"/>
+<button> 	Create </button>
+
+<p class="message">Already registered? <a href="#">Login</a>
+</p>
+</form>
+<form class="login-form">
+<div class="login-form">
+<font color="white"><h1>QUIZ SYSTEM</h1></font>
+<input type="text" placeholder="user name" name="userid"/><br>
+<input type="password" placeholder="password" name="pswrd"/><br>
+<button><input type="button" onclick="check(this.form)"value="Login"/></button>
+
+<p class="message"> Not registered? <a href="#">Register</a></p>
+</div>
+ </form>
+</div>
+</div>
+
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'>
+</script>
+<script>
+$('.message a').click(function(){
+$('form').animate({height: "toggle", opacity:"toggle"},"slow");
+});
+</script>
+
+<script language="javascript">
+function check(form)
+{
+	if(form.userid.value =="tanmoy" && form.pswrd.value == "123456")
+		{
+		window.open('http://localhost/my%20work/Tanmoyquizsapp.html')
+		}
+	else
+		{
+		alert ("The username and password you entered don't match")
+		}
+
+}
+
+
+</script>
+</body>
+
+</html>

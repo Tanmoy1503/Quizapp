@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+p {
+  border: 1px solid powderblue;
+  padding: 30px;
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+</style>
+
+<h1> 1.Who was the first Indian woman in Space?</h1>
+
+<form action="q1.php">
+  Select one option: 
+<br>
+  <p><input type="radio" id="male" name="gender" value="male">
+  <label for="male">Kalpana Chawla</label></p><br>
+  <p><input type="radio" id="female" name="gender" value="female">
+  <label for="female">Sunita Williams</label></p><br>
+  <p><input type="radio" id="other" name="gender" value="other">
+  <label for="other">Koneru Humpy</label></p><br>
+  <p><input type="radio" id="others" name="gender" value="others">
+  <label for="others">None of these</label></p>
+
+</form>
+<br>
+<br>
+<a href="q2.html" target="_blank"> Save & Next </a>
+
+</body>
+</html>

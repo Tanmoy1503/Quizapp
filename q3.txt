@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> 3. Who was the first Man to Climb Mount Everest Without Oxygen??</h1>
+
+<form action="q1.php">
+  <p>Select one option: </p>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Junko Tabei</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Reinhold Messner</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Peter Habeler</label><br>
+  <input type="radio" id="others" name="gender" value="others">
+  <label for="others">Phu Dorji</label>
+
+</form>
+<br>
+<br>
+<a href="q2.html"> Previous </a>
+<br>
+<br>
+<a href="q4.html"> Save & Next </a>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MCQ BASED QUIZ SYSTEM</title>
+</head>
+<body>
+    <style>
+        #frame001 {
+            border-radius: 20px;
+            background-color: white;
+            border: 2px solid black;
+            height: 600px;
+            width: 400px;
+font-family: "Roboto",sans-serif;
+outline:2;
+background: #f3f3f3;
+width: 98%;
+border: 25px;
+margin: 15px 15px 15px;
+padding: 35px;
+box-sizing: border-box;
+font-size: 16px;
+
+        }
+
+        .buttons001 {
+            background-color: dodgerblue;
+            color: white;
+            width: 200px;
+            height: 70px;
+            border-radius: 20px;
+            font-size: 15px;
+	    transition: 0.3s;
+	    margin: 4px 2px;
+        }
+	.buttons001 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttons001 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.buttons001:hover span {
+  padding-right: 25px;
+   color: white;
+}
+
+.button001:hover span:after {
+  opacity: 0.6;
+  right: 0;
+}
+
+        .buttons002 {
+            background-color: green;
+            color: white;
+            width: 100px;
+            height: 60px;
+            border-radius: 5px;
+            font-size: 25px;
+        }
+       .buttons003 {
+	    margin-left:1000px;
+            background-color: orange;
+            color: white;
+            width: 200px;
+            height: 70px;
+            border-radius: 20px;
+            font-size: 25px;
+            opacity: 1;
+            transition: 0.3s
+            
+      }
+      .buttons003:hover{
+	opacity:0.4
+        }
+
+        #font001 {
+            text-align: center;
+            font-size: large;
+            color: black;
+        }
+.frame001{
+
+position:relative;
+	z-index:1;
+	background: rgba(7,40,195,0.8);
+	max-width:360px;
+	margin: 0 auto 40px;
+	padding: 45px;
+	text-align: center;
+}
+    </style>
+    <div id="frame001">
+        <div id="font001">
+            <h1>MCQ BASED QUIZ SYSTEM</h1><text>
+            <h3>Developed By- Tanmoy Samanta</h3><text>
+            Question: <text id="number001">0</text></text><br />
+            <text>Score: <text id="score001">0</text></text> </>
+	    <text>Time: <text id="time001">60</text></text>
+            <hr />
+            <div id="disappear001">
+                <button class="buttons002" onclick="begin001()">Begin</button>
+            </div>
+            <p id="message001"></p>
+            <p id="message002"></p>
+            <p id="message003"></p>
+            <p id="message004"></p>
+        </div>
+    </div>
+    <script>
+        var question001 = ["1.Who was the first Indian woman in Space?",
+"2. Who was the first Indian in space?",
+"3. Who was the first Man to Climb Mount Everest Without Oxygen?",
+"4. Who built the Jama Masjid?",
+"5. Who wrote the Indian National Anthem?",
+"6. Who was the first Indian Scientist to win a Nobel Prize?",
+"7. Who is the first Indian to win a Nobel Prize?",
+"8. Who was the first Indian woman to win the Miss World Title?",
+"9. Who was the first President of India?",
+"10. Who was the first Indian to win the Booker Prize?"
+        ];
+
+        var options001 = ["<button class=buttons001 onclick=q1c()><span>A. Kalpana Chawla</span></button><br /><br /><button class=buttons001 onclick=q1i1()><span>B. Sunita Williams</span></button><br /><br /><button class=buttons001 onclick=q1i1()><span>C. Koneru Humpy</span></button><br /><br /><button class=buttons001 onclick=q1i1()><span>D. None of the above</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options002 = ["<button class=buttons001 onclick=q1i2()><span>A. Vikram Ambalal</span></button><br /><br /><button class=buttons001 onclick=q1i2()><span>B. Ravish Malhotra</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>C. Rakesh Sharma</span></button><br /><br /><button class=buttons001 onclick=q1i2()><span>D. Nagapathi Bhat</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options003 = ["<button class=buttons001 onclick=q1i3()><span>A. Admond hillery</span></button><br /><br /><button class=buttons001 onclick=q1i3()><span>B. Reinhold Messner</span></button><br /><br /><button class=buttons001 onclick=q1i3()><span>C. Peter Habeler</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>D. Phu Dorji</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options004 = ["<button class=buttons001 onclick=q1i4()><span>A. Jahangir</span></button><br /><br /><button class=buttons001 onclick=q1i4()><span>B. Akbar</span></button><br /><br /><button class=buttons001 onclick=q1i4()><span>C. Imam Bukhari</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>D. Shah Jahan</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options005 = ["<button class=buttons001 onclick=q1i5()><span>A. Bakim Chandra Chatterji</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>B. Rabindranath Tagore</span></button><br /><br /><button class=buttons001 onclick=q1i5()><span>C. Swami Vivekananda</span></button><br /><br /><button class=buttons001 onclick=q1i5()><span>D. None of the above</span></button><br/ ><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options006 = ["<button class=buttons001 onclick=q1c()><span>A. CV Raman</span></button><br /><br /><button class=buttons001 onclick=q1i6()><span>B. Amartya Sen</span></button><br /><br /><button class=buttons001 onclick=q1i6()><span>C. Hargobind Khorana</span></button><br /><br /><button class=buttons001 onclick=q1i6()><span>D. Subramanian Chrandrashekar</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options007 = ["<button class=buttons001 onclick=q1c()><span>A. Rabindranath Tagore</span></button><br /><br /><button class=buttons001 onclick=q1i7()><span>B. CV Raman</span></button><br /><br /><button class=buttons001 onclick=q1i7()><span>C. Mother Theresa</span></button><br /><br /><button class=buttons001 onclick=q1i7()><span>D. Hargobind Khorana</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options008 = ["<button class=buttons001 onclick=q1i8()><span>A. Aishwarya Rai</span></button><br /><br /><button class=buttons001 onclick=q1i8()><span>B. Sushmita Sen</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>C. Reita Faria</span></button><br /><br /><button class=buttons001 onclick=q1i8()><span>D. Diya Mirza</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options009 = ["<button class=buttons001 onclick=q1i9()><span>A. Abdul Kalam</span></button><br /><br /><button class=buttons001 onclick=q1i9()><span>B. Lal Bahadur Shastri</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>C. Dr. Rajendra Prasad</span></button><br /><br /><button class=buttons001 onclick=q1i9()><span>D. Zakir Hussain</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+        var options010 = ["<button class=buttons001 onclick=q1i10()><span>A. Dhan Gopal Mukerji</span></button><br /><br /><button class=buttons001 onclick=q1i10()><span>B. Nirad C. Chaudhuri</span></button><br /><br /><button class=buttons001 onclick=q1i10()><span>C. Aravind Adiga</span></button><br /><br /><button class=buttons001 onclick=q1c()><span>D. Arundhati Roy</span></button><br /><br /><button class=buttons003 onclick=q1s()>Skip</button>"];
+
+        var a = 0;
+        a++;
+        var b = 0;
+        b++;
+	
+	
+
+        function begin001() {
+	     c=60;
+            disappear001.innerHTML = "";
+            message001.innerHTML = question001[0];
+            message002.innerHTML = options001;
+            number001.innerHTML = a++;
+        }
+        function q1s() {
+            message003.innerHTML = "Skipped";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q1c() {
+            message003.innerHTML = "Correct";
+            message002.innerHTML = "";
+            score001.innerHTML = b++;
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function q1i1() {
+            message003.innerHTML = "Incorrect! Correct option is: A. Kalpana Chawla";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+ function q1i2() {
+            message003.innerHTML = "Incorrect! Correct option is: C. Rakesh Sharma";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i3() {
+            message003.innerHTML = "Incorrect! Correct option is: D. Phu Dorji";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i4() {
+            message003.innerHTML = "Incorrect! Correct option is:D. Shah Jahan";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i5() {
+            message003.innerHTML = "Incorrect! Correct option is:B. Rabindranath Tagore";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i6() {
+            message003.innerHTML = "Incorrect ! Correct option is:A. CV Raman ";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i7() {
+            message003.innerHTML = "Incorrect! Correct option is:A. Rabindranath Tagore ";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i8() {
+            message003.innerHTML = "Incorrect! Correct option is:C. Reita Faria";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i9() {
+            message003.innerHTML = "Incorrect! Correct option is:C. Dr. Rajendra Prasad";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        } function q1i10() {
+            message003.innerHTML = "Incorrect! Correct option is: D. Arundhati Roy";
+            message002.innerHTML = "";
+            message004.innerHTML = "<button class=buttons002 onclick=next001()>Next</button>";
+        }
+
+        function next001() {
+            if (a == "2") {
+                message001.innerHTML = question001[1];
+                message002.innerHTML = options002;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "3") {
+                message001.innerHTML = question001[2];
+                message002.innerHTML = options003;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "4") {
+                message001.innerHTML = question001[3];
+                message002.innerHTML = options004;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "5") {
+                message001.innerHTML = question001[4];
+                message002.innerHTML = options005;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "6") {
+                message001.innerHTML = question001[5];
+                message002.innerHTML = options006;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "7") {
+                message001.innerHTML = question001[6];
+                message002.innerHTML = options007;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "8") {
+                message001.innerHTML = question001[7];
+                message002.innerHTML = options008;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "9") {
+                message001.innerHTML = question001[8];
+                message002.innerHTML = options009;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            }
+
+            else if (a == "10") {
+                message001.innerHTML = question001[9];
+                message002.innerHTML = options010;
+                message003.innerHTML = "";
+                number001.innerHTML = a++;
+                message004.innerHTML = "";
+            } 
+	else if (b>10)
+            {
+                message001.innerHTML = "End of Quiz" + "<br />"+ "Excellent & Brilliant!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                
+            } 
+else if (b>9)
+            {
+                message001.innerHTML = "End of Quiz" + "<br />"+ "Very good!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                
+            } 
+else if (b>8)
+            {
+                message001.innerHTML = "End of Quiz" + "<br />"+ "good!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                
+            } 
+else if (b>7)
+            {
+                message001.innerHTML = "End of Quiz" + "<br />"+ "OK!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                
+            } 
+else if (b>6)
+            {
+                message001.innerHTML = "End of Quiz" + "<br />"+ "Not good!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+                
+            } 
+
+	    else {
+                message001.innerHTML = "End of Quiz"+ "<br />"+ "No Comments!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+            }
+        }
+function timer001()
+	{
+		c=c-1;
+		if(c<60)
+			{
+	                   time001.innerHTML=	c;
+			}
+		if(c<1)
+		{
+			window.clearInterval(update);
+                message001.innerHTML = "Time's up!";
+                message002.innerHTML = "";
+                message003.innerHTML = "";
+                message004.innerHTML = "<button class=buttons002 onclick=repeat001()>Repeat</button>";
+		 }
+		
+	}
+update = setInterval("timer001()",1000);
+        function repeat001() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
